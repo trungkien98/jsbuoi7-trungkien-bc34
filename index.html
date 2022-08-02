@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 mx-auto">
+          <h3 class="display-4 text-center">Bài tập buổi 7</h3>
+          <div class="form-group">
+            <label for="">Nhập số : </label>
+            <input type="text" class="form-control" id="number" />
+          </div>
+
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnAddNum">Thêm số</button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnSumArr">
+              Tổng các số trong mảng
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnCountPosNum">
+              Đếm các số dương
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnMaxNum">
+              Tìm số lớn nhất
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnMinNum">
+              Tìm số nhỏ nhất
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnLastEvenNum">
+              Tìm số chẵn cuối cùng trong mảng
+            </button>
+          </div>
+          <div class="row">
+            <div class="form-group">
+              <label for="">Vị trí 1 : </label>
+              <input
+                type="text"
+                class="form-control"
+                id="posit1"
+                placeholder="Vị trí 1 của mảng"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Vị trí 2 : </label>
+              <input
+                type="text"
+                class="form-control"
+                id="posit2"
+                placeholder="Vị trí 2 của mảng"
+              />
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" onclick="swapPosit()">
+              Đổi vị trí
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnSortUp">
+              Sắp xếp tăng dần
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnTimSNT">
+              Tìm số nguyên tố đầu tiên
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnTimSoNguyen">
+              Đếm số nguyên
+            </button>
+          </div>
+          <div class="form-group text-center">
+            <button class="btn btn-success" id="btnSoSanhAmDuong">
+              So sánh
+            </button>
+          </div>
+        </div>
+        <div class="col-5 px-5">
+          <h3 class="display-4 text-center mb-4" style="font-size: 50px">
+            Kết quả
+          </h3>
+          <p class="lead">
+            Mảng hiện tại
+            <span class="text-success font-weight-bold" id="spamArrNum"> </span>
+          </p>
+          <p class="lead">
+            Tổng của mảng là:
+            <span class="text-success font-weight-bold" id="sumArr"></span>
+          </p>
+          <p class="lead">
+            Số các số dương trong mảng là:
+            <span
+              class="text-success font-weight-bold"
+              id="soLuongSoDuong"
+            ></span>
+          </p>
+          <p class="lead">
+            Số lớn nhất trong mảng:
+            <span class="text-success font-weight-bold" id="maxNum"></span>
+          </p>
+          <p class="lead">
+            Số nhỏ nhất trong mảng :
+            <span class="text-success font-weight-bold" id="minNum"></span>
+          </p>
+          <p class="lead">
+            Số chẵn cuối cùng trong mảng :
+            <span class="text-success font-weight-bold" id="lastEvenNum"></span>
+          </p>
+          <p class="lead">
+            Vị trí mới :
+            <span class="text-success font-weight-bold" id="newPosit"></span>
+          </p>
+          <p class="lead">
+            Sắp xếp tăng dần :
+            <span class="text-success font-weight-bold" id="increase"></span>
+          </p>
+          <p class="lead">
+            Số nguyên tố đầu tiên :
+            <span class="text-success font-weight-bold" id="sntDauTien"></span>
+          </p>
+          <p class="lead">
+            Đếm các số nguyên :
+            <span
+              class="text-success font-weight-bold"
+              id="soLuongSoNguyen"
+            ></span>
+          </p>
+          <p class="lead">
+            So sánh số lượng số âm dương :
+            <span class="text-success font-weight-bold" id="soSanh"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
